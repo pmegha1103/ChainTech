@@ -1,0 +1,21 @@
+<!-- myapp/templates/form_submissions.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Submissions</title>
+</head>
+<body>
+    <h1>Form Submissions</h1>
+    <ul>
+        {% for submission in submissions %}
+            <li>Name: {{ submission.name }} </li>
+            <li>Email: {{ submission.email }} </li>
+            <li>Date of Submission: {{ submission.submission_date }}</li>
+        {% empty %}
+            <li>No submissions yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Back to Form</a>
+</body>
+</html>
